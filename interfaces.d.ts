@@ -1,10 +1,5 @@
 
-type Int = number & {__int__: void};
-
-interface Totaluser {
+type Totaluser = {
     date: Date,
-    number_of_users: Int
+    number_of_users: number
 }
-
-
-export type {Totaluser};

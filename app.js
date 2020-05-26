@@ -1,5 +1,3 @@
-"use strict";
-exports.__esModule = true;
 var pgp = require('pg-promise')();
 var yargs = require('yargs');
 var db_connect = {
