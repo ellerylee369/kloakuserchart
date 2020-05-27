@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Kloak_User_Chart_Browser</title>
+        <meta name ="viewport" content="width-device-width, initial-scale=1">
+        <script type="text/javascript" src="../js/Chart.js"></script>
+        <link href="../css/Chart.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <h1>Testing Kloak User Chart on browser side</h1>
+        <canvas id="KloakUserChartbrowser" width="400" height="400"></canvas>
+        
+        <script>
+            var ctx = document.getElementById('KloakUserChartbrowser');
+            console.log('hi', ctx)
+            var Kloak_User_Chart_Browser = new Chart(ctx, {
+                type: 'line',
+                data : {
+                    labels: ['May 1', 'May 2', 'May 3', 'May 4', 'May 5'],
+                    dataset: [{
+                        backgroundColor: 'rgb(255,99,132)',
+                        borderColor: 'rgb(255,99,132)',
+                        data : [10, 20, 30, 40, 50]
+                    }],
+                    options: {
+                        responsive: true,
+                        title: {
+                            display: true,
+                            text: 'Kloak platform total users'
+                        },
+                        scales : {
+                            xAxes : [{
+                                display: true,
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Month'
+                                }
+                            }],
+                            yAxes : [{
+                                ticks: {
+                                    min: 0,
+                                    max: 100,
+                                    stepSize: 10
+                                },
+                                display: true,
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Number of total users'
+                                }
+                            }]
+                        }
+                    }
+            }
+            })
+
+            
+            </script>
+           
+    </body>
+</html>
+
