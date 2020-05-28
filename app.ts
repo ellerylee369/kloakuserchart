@@ -45,16 +45,17 @@ let kloak_user_data = db.each(query, [], (totaluser:Totaluser) => {
 
 //Using chart.js to visualize the data
 var Kloak_User_Charts = <HTMLCanvasElement>document.getElementById('KloakUserChart')
-var ctx = Kloak_User_Charts.getContext('2d')
-var Kloak_User_Chart = new Chart(ctx, {
+var ctx = document.getElementById('KloakUserChartbrowser')
+var Kloak_User_Chart_Browser = new Chart(ctx, {
     type: 'line',
     data : {
         labels: kloak_user_data[0],
-        dataset: [{
-            backgroundColor: "#002f8a",
-            borderColor: "#002f8a",
-            data : kloak_user_data[1],
-        }],
+        datasets: [{
+            fill: false,
+            borderColor: 'rgb(255,99,132)',
+            data : kloak_user_data[1]
+        }]
+    },
         options: {
             responsive: true,
             title: {
@@ -70,21 +71,20 @@ var Kloak_User_Chart = new Chart(ctx, {
                     }
                 }],
                 yAxes : [{
+                    ticks: {
+                        min: 0,
+                        max: 100,
+                        stepSize: 10
+                    },
                     display: true,
                     scaleLabel: {
                         display: true,
                         labelString: 'Number of total users'
-                    }
-                }]
-            }
-        }
+                    },
+                },
+                ],
 
+            },
+        },
 
-
-    
-        
-
-        
-
-    }
 })

@@ -13,14 +13,14 @@
         <canvas id="KloakUserChartbrowser" width="400" height="400"></canvas>
         
         <script>
-            var ctx = document.getElementById('KloakUserChartbrowser');
+            var ctx = document.getElementById('KloakUserChartbrowser').getContext('2d');
             console.log('hi', ctx)
             var Kloak_User_Chart_Browser = new Chart(ctx, {
                 type: 'line',
                 data : {
                     labels: ['May 1', 'May 2', 'May 3', 'May 4', 'May 5'],
-                    dataset: [{
-                        backgroundColor: 'rgb(255,99,132)',
+                    datasets: [{
+                        fill: false,
                         borderColor: 'rgb(255,99,132)',
                         data : [10, 20, 30, 40, 50]
                     }]
