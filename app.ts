@@ -4,6 +4,7 @@
 const pgp = require('pg-promise')()
 const Chart = require('chart.js')
 const express = require('express.js')
+const app = express();
 
 
 const db_connect = {
@@ -87,4 +88,9 @@ var Kloak_User_Chart_Browser = new Chart(ctx, {
             },
         },
 
+
+
+
 })
+
+
